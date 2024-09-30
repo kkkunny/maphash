@@ -25,7 +25,7 @@ import (
 func FuzzStringHasher(f *testing.F) {
 	f.Add("")
 	f.Add("hello world")
-	f.Add("github.com/dolthub/maphash")
+	f.Add("github.com/kkkunny/maphash")
 	f.Fuzz(func(t *testing.T, key string) {
 		testHasher(t, key)
 	})

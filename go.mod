@@ -1,4 +1,4 @@
-module github.com/dolthub/maphash
+module github.com/kkkunny/maphash
 
 go 1.18
 
