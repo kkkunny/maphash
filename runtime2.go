@@ -10,7 +10,7 @@ import (
 
 func getRuntimeHasher2[K any]() (h hashfn) {
 	var k K
-	a := reflect.MakeMap(reflect.MapOf(reflect.TypeOf(k), reflect.TypeOf(struct{}{}))).Interface()
+	a := reflect.MakeMap(reflect.MapOf(reflect.TypeOf(&k).Elem(), reflect.TypeOf(struct{}{}))).Interface()
 	i := (*mapiface)(unsafe.Pointer(&a))
 	h = i.typ.hasher
 	return
